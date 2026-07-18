@@ -11,7 +11,7 @@ window.addEventListener('scroll', () => {
 
 /* ── Mobile hamburger ─────────────────────────────────────────── */
 const hamburger = document.getElementById('hamburger');
-const navLinks  = document.getElementById('navLinks');
+const navLinks = document.getElementById('navLinks');
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('open');
   navLinks.classList.toggle('open');
@@ -28,10 +28,10 @@ const sections = document.querySelectorAll('section[id]');
 function updateActiveNav() {
   const scrollY = window.scrollY + 100;
   sections.forEach(sec => {
-    const top    = sec.offsetTop;
+    const top = sec.offsetTop;
     const height = sec.offsetHeight;
-    const id     = sec.getAttribute('id');
-    const link   = document.querySelector(`.nav-links a[href="#${id}"]`);
+    const id = sec.getAttribute('id');
+    const link = document.querySelector(`.nav-links a[href="#${id}"]`);
     if (link) {
       link.classList.toggle('active', scrollY >= top && scrollY < top + height);
     }
@@ -99,9 +99,9 @@ document.querySelectorAll('.count-up').forEach(el => counterObserver.observe(el)
 /* ── Project card expand/collapse ────────────────────────────── */
 document.querySelectorAll('.project-toggle').forEach(btn => {
   btn.addEventListener('click', () => {
-    const card    = btn.closest('.project-card');
+    const card = btn.closest('.project-card');
     const bullets = card.querySelector('.project-bullets');
-    const isOpen  = bullets.classList.contains('expanded');
+    const isOpen = bullets.classList.contains('expanded');
     bullets.classList.toggle('expanded', !isOpen);
     btn.textContent = isOpen ? 'See more ↓' : 'See less ↑';
   });
@@ -120,7 +120,7 @@ if (window.matchMedia('(pointer:fine)').matches) {
   document.body.appendChild(glow);
   document.addEventListener('mousemove', e => {
     glow.style.left = e.clientX + 'px';
-    glow.style.top  = e.clientY + 'px';
+    glow.style.top = e.clientY + 'px';
   });
 }
 
